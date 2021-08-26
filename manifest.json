@@ -1,0 +1,27 @@
+{
+    "name": "Tracau Extension",
+    "description": "Tra cau Anh - Viet Chrome Ext",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage","contextMenus"],
+    "content_scripts": [
+        {
+            "matches": [ "http://*/*", "https://*/*" ],
+            "js": ["assets/js/content.js"],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "assets/images/tracau_16.png"
+        }
+    },
+    "icons": {
+        "16": "assets/images/tracau_16.png"
+    }
+}
